@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Smart Campus API</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: #0f172a;
+                color: #e2e8f0;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding: 40px 20px;
+            }
+
+            .badge {
+                background: #22c55e22;
+                color: #22c55e;
+                border: 1px solid #22c55e44;
+                padding: 6px 16px;
+                border-radius: 20px;
+                font-size: 13px;
+                margin-bottom: 24px;
+                letter-spacing: 1px;
+            }
+
+            h1 {
+                font-size: 42px;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 12px;
+                color: #f8fafc;
+            }
+
+            h1 span {
+                color: #38bdf8;
+            }
+
+            .subtitle {
+                color: #94a3b8;
+                font-size: 16px;
+                text-align: center;
+                margin-bottom: 48px;
+            }
+
+            .base-url {
+                background: #1e293b;
+                border: 1px solid #334155;
+                border-radius: 10px;
+                padding: 14px 24px;
+                font-family: monospace;
+                font-size: 15px;
+                color: #38bdf8;
+                margin-bottom: 48px;
+            }
+
+            .base-url span {
+                color: #94a3b8;
+                margin-right: 8px;
+            }
+
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 20px;
+                width: 100%;
+                max-width: 900px;
+                margin-bottom: 48px;
+            }
+
+            .card {
+                background: #1e293b;
+                border: 1px solid #334155;
+                border-radius: 12px;
+                padding: 24px;
+            }
+
+            .card h3 {
+                font-size: 16px;
+                font-weight: 600;
+                margin-bottom: 16px;
+                color: #f1f5f9;
+            }
+
+            .endpoint {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                padding: 8px 0;
+                border-bottom: 1px solid #1e293b;
+                font-size: 13px;
+            }
+
+            .card:hover {
+                border-color: #38bdf8;
+                transition: 0.2s;
+            }
+
+            .method {
+                font-size: 11px;
+                font-weight: 700;
+                padding: 3px 8px;
+                border-radius: 4px;
+                min-width: 48px;
+                text-align: center;
+                font-family: monospace;
+            }
+
+            .get    {
+                background: #0284c722;
+                color: #38bdf8;
+                border: 1px solid #0284c744;
+            }
+            .post   {
+                background: #16a34a22;
+                color: #22c55e;
+                border: 1px solid #16a34a44;
+            }
+            .delete {
+                background: #dc262622;
+                color: #f87171;
+                border: 1px solid #dc262644;
+            }
+
+            .path {
+                font-family: monospace;
+                color: #cbd5e1;
+            }
+
+            .footer {
+                color: #475569;
+                font-size: 13px;
+                text-align: center;
+            }
+
+            .footer a {
+                color: #38bdf8;
+                text-decoration: none;
+            }
+
+            .try-btn {
+                display: inline-block;
+                margin-top: 8px;
+                background: #38bdf8;
+                color: #0f172a;
+                font-weight: 600;
+                padding: 10px 28px;
+                border-radius: 8px;
+                text-decoration: none;
+                font-size: 14px;
+                margin-bottom: 32px;
+            }
+
+            .try-btn:hover {
+                background: #7dd3fc;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="badge">🟢 SERVER RUNNING</div>
+
+        <h1>Smart <span>Campus</span> API</h1>
+        <p class="subtitle">Sensor & Room Management </p>
+
+        <div class="base-url">
+            <span>Base URL</span> localhost:8080/SmartCampusAPI/api/v1
+        </div>
+
+
+
+        <div class="grid">
+
+            <div class="card">
+                <h3>Rooms</h3>
+                <div class="endpoint">
+                    <span class="method get">GET</span>
+                    <span class="path">/rooms</span>
+                </div>
+                <div class="endpoint">
+                    <span class="method post">POST</span>
+                    <span class="path">/rooms</span>
+                </div>
+                <div class="endpoint">
+                    <span class="method get">GET</span>
+                    <span class="path">/rooms/{roomId}</span>
+                </div>
+                <div class="endpoint">
+                    <span class="method delete">DELETE</span>
+                    <span class="path">/rooms/{roomId}</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Sensors</h3>
+                <div class="endpoint">
+                    <span class="method get">GET</span>
+                    <span class="path">/sensors</span>
+                </div>
+                <div class="endpoint">
+                    <span class="method get">GET</span>
+                    <span class="path">/sensors?type=CO2</span>
+                </div>
+                <div class="endpoint">
+                    <span class="method post">POST</span>
+                    <span class="path">/sensors</span>
+                </div>
+                <div class="endpoint">
+                    <span class="method get">GET</span>
+                    <span class="path">/sensors/{sensorId}</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Sensor Readings</h3>
+                <div class="endpoint">
+                    <span class="method get">GET</span>
+                    <span class="path">/sensors/{id}/readings</span>
+                </div>
+                <div class="endpoint">
+                    <span class="method post">POST</span>
+                    <span class="path">/sensors/{id}/readings</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>Discovery</h3>
+                <div class="endpoint">
+                    <span class="method get">GET</span>
+                    <span class="path">/api/v1/</span>
+                </div>
+            </div>
+
+        </div>
+
+        
+
+    </body>
+</html>
