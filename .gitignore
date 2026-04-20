@@ -1,0 +1,7 @@
+target/
+*.class
+*.war
+*.ear
+nbproject/private/
+build/
+dist/
