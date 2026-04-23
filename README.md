@@ -103,6 +103,7 @@ The API comes with sample data for testing:
 - `TEMP-001` - Temperature sensor (ACTIVE) in LIB-301
 - `CO2-001` - CO2 sensor (ACTIVE) in LAB-101
 
+
 ## Answers to the given questions
 
 **Q1.1 – JAX-RS Resource Class Lifecycle**
